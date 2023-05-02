@@ -1,1 +1,1 @@
-print("boop")
+require("nicky.core.options")
