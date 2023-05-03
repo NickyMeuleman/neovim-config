@@ -3,7 +3,7 @@
 Uses several different sources as inspiration:
 - https://www.youtube.com/watch?v=ctH-a-1eUME
 - https://github.com/LunarVim/nvim-basic-ide
-- https://www.youtube.com/watch?v=vdn_pKJUda
+- https://www.youtube.com/watch?v=vdn_pKJUda8
 - https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 - https://www.youtube.com/watch?v=stqUbv-5u2s
 - https://github.com/nvim-lua/kickstart.nvim
