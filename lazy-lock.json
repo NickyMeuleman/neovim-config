@@ -1,5 +1,5 @@
 {
-  "lazy.nvim": { "branch": "main", "commit": "ceb413678dfcf3d5455208959185e3db1f7892c7" },
+  "lazy.nvim": { "branch": "main", "commit": "83a625f5c884a3ceee821ce54a812c8321ecba31" },
   "nightfly": { "branch": "master", "commit": "5f12e607b6d3b1a5aebe129dc0b5f7d85dc33eb3" },
   "nvim-surround": { "branch": "main", "commit": "e6047128e57c1aff1566fb9f627521d2887fc77a" }
 }
