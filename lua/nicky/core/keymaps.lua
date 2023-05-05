@@ -56,3 +56,10 @@ keymap.set("v", ">", ">gv", opts)
 -- allow pasting over something without copying the text that was just pasted over
 keymap.set("v", "p", '"_dP', opts)
 
+-- yank and paste to/from the system clipboard
+-- I'm keeping the system clipboard seperate from the vim clipboard on purpose
+-- you often see vim.opt.clipboard = "unnamedplus", but I don't want to do that
+keymap.set({"n", "v"}, "<leader>y", [["+y]], opts)
+keymap.set({"n", "v"}, "<leader>p", [["+p]], opts)
+keymap.set("n", "<leader>Y", [["+Y]], opts)
+
