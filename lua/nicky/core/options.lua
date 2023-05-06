@@ -39,7 +39,7 @@ opt.splitright = true                       -- force all vertical splits to go t
 
 -- Update time & timeout
 opt.timeout = true                          -- time out if keys from a combo are not pressed in time
-opt.timeoutlen = 400                        -- time to wait for a mapped sequence to complete (in milliseconds)
+opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
 opt.updatetime = 400                        -- faster completion (4000ms default)
 
 -- Misc (aka I didn't know where to put these)
