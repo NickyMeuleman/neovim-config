@@ -59,3 +59,5 @@ opt.shortmess:append "c"                    -- hide all the completion messages,
 opt.whichwrap:append "<,>,[,],h,l"          -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 opt.formatoptions:remove { "c", "r", "o" }  -- prevent automatic formatting of a new line when pressing o on a comment line in normal mode, enter in insert
 
+-- lualine shows current mode
+opt.showmode = false
