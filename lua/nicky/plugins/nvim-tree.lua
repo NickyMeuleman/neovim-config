@@ -19,9 +19,10 @@ function M.config()
         return
     end
     nvim_tree.setup({
-        view = {
-            side = "right"
-        },
+        --  right side causes opened buffer to become invisible on tree close, rendering the plugin unusable, big-sad
+        -- view = {
+        --     side = "right"
+        -- },
         renderer = {
             indent_markers = {
                 enable = true
