@@ -63,3 +63,5 @@ keymap.set({"n", "v"}, "<leader>y", [["+y]], opts)
 keymap.set({"n", "v"}, "<leader>p", [["+p]], opts)
 keymap.set("n", "<leader>Y", [["+Y]], opts)
 
+-- Open file explorer on current file
+keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)

@@ -9,6 +9,7 @@ Uses several different sources as inspiration:
 - https://github.com/nvim-lua/kickstart.nvim
 - https://www.youtube.com/watch?v=w7i4amO_zaE
 - https://github.com/ThePrimeagen/init.lua
-
+- https://www.youtube.com/watch?v=J9yqSdvAKXY
+- https://github.com/cpow/cpow-dotfiles
 
 I'm swiching from VSCode to Neovim so expect several setting that are tailored to preserving my habits partially.
