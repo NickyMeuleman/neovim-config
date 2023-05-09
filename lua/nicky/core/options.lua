@@ -32,6 +32,12 @@ opt.termguicolors = true                    -- set term gui colors (most termina
 opt.signcolumn = "yes"                      -- always show the sign column (the gutter left of line numbers)
 opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 opt.cursorline = true                       -- highlight the current line
+opt.list = true                             -- show nomally invisible characters
+opt.listchars:append({                      -- override default characters
+    eol = '↵',
+    space =  '·',
+    trail = '·'
+})
 
 -- Split window
 opt.splitbelow = true                       -- force all horizontal splits to go below current window
