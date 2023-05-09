@@ -65,3 +65,27 @@ keymap.set("n", "<leader>Y", [["+Y]], opts)
 
 -- Open file explorer on current file
 keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)
+
+-- Telescope --
+-- See `:help telescope.builtin`
+-- adapted from https://github.com/nvim-lua/kickstart.nvim/blob/0470d07c8c44f270bd64d0d11f5ebb8d994a1c00/init.lua#L268-L284
+keymap.set('n', '<leader>?',  "<cmd>Telescope oldfiles<cr>", { desc = '[?] Find recently opened files' })
+-- list open buffers in current neovim instance
+keymap.set('n', '<leader><space>', "<cmd>Telescope buffers<cr>", { desc = '[ ] Find existing buffers' })
+keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+keymap.set('n', '<leader>gf', "<cmd>Telescope git_files<cr>", { desc = 'Search [G]it [F]iles' })
+-- find files within current working directory, respects .gitignore
+keymap.set('n', '<leader>sf', "<cmd>Telescope find_files<cr>", { desc = '[S]earch [F]iles' })
+-- list available help tags
+keymap.set('n', '<leader>sh', "<cmd>Telescope help_tags<cr>", { desc = '[S]earch [H]elp' })
+-- find string under cursor in current working directory
+keymap.set('n', '<leader>sw', "<cmd>Telescope grep_string<cr>", { desc = '[S]earch current [W]ord' })
+-- find string in current working directory as you type
+keymap.set('n', '<leader>sg', "<cmd>Telescope live_grep<cr>", { desc = '[S]earch by [G]rep' })
+keymap.set('n', '<leader>sd', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' })
