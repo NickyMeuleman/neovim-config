@@ -32,6 +32,11 @@ function M.config()
             icons_enabled = true,
             theme = lualine_nightfly,
             section_separators = { left = "", right = "" },
+        },
+        sections = {
+            lualine_x = {
+                { "filetype" }
+            }
         }
     })
 end
