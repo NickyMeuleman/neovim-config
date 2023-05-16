@@ -1,6 +1,7 @@
 local M = {
     "hrsh7th/nvim-cmp",
     dependencies = {
+        { "hrsh7th/cmp-nvim-lsp" },
         { "hrsh7th/cmp-buffer" },
         { "hrsh7th/cmp-path" },
     }
@@ -8,7 +9,7 @@ local M = {
 
 function M.config()
     local cmp_status, cmp = pcall(require, "cmp")
-    if not cmp then
+    if not cmp_status then
         return
     end
 
@@ -39,6 +40,7 @@ function M.config()
             end, { 'i', 's' }),
         },
         sources = {
+            { name = "nvim_lsp" },
             { name = "buffer" },
             { name = "path" },
         },

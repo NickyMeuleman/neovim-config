@@ -13,3 +13,6 @@ Uses several different sources as inspiration:
 - https://github.com/cpow/cpow-dotfiles
 
 I'm swiching from VSCode to Neovim so expect several setting that are tailored to preserving my habits partially.
+
+
+alternative way to set up LSPs detailed here: https://github.com/williamboman/mason.nvim/discussions/57#discussioncomment-3129035
