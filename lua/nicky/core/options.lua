@@ -67,3 +67,6 @@ opt.formatoptions:remove { "c", "r", "o" }  -- prevent automatic formatting of a
 
 -- lualine shows current mode
 opt.showmode = false
+
+-- luasnip
+opt.completeopt = "menu,menuone,noselect"   -- autocompletion dropdown behaviour
