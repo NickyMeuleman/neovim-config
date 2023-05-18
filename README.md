@@ -16,3 +16,10 @@ I'm swiching from VSCode to Neovim so expect several setting that are tailored t
 
 
 alternative way to set up LSPs detailed here: https://github.com/williamboman/mason.nvim/discussions/57#discussioncomment-3129035
+
+### Notes
+
+https://github.com/folke/trouble.nvim
+to replace my usage of the "problems" panel in vscode.
+
+Should I do an integrated terminal, use my termial app's splits and tabs, or go full on tmux?

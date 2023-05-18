@@ -13,6 +13,8 @@ local M = {
         { "saadparwaiz1/cmp_luasnip" },
         { "hrsh7th/cmp-buffer" },
         { "hrsh7th/cmp-path" },
+        -- a plugin for icons in autocompletion because I don't want to pick them all manually
+        { "onsails/lspkind.nvim" }
     }
 }
 
@@ -24,6 +26,11 @@ function M.config()
 
     local luasnip_status, luasnip = pcall(require, "luasnip")
     if not luasnip_status then
+        return
+    end
+
+    local lspkind_status, lspkind = pcall(require, "lspkind")
+    if not lspkind_status then
         return
     end
 
@@ -69,6 +76,12 @@ function M.config()
                     fallback()
                 end
             end, { 'i', 's' }),
+        },
+        formatting = {
+            format = lspkind.cmp_format({
+                maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            })
         },
         sources = {
             { name = "nvim_lsp" },
