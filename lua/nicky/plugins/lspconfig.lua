@@ -39,18 +39,10 @@ function M.config()
             vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
         end
 
-        nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-        nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-        nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
         nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-        nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-        nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+        nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
         nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
         nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-
-        -- See `:help K` for why this keymap
-        nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
         nmap('<C-h>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
         -- Lesser used LSP functionality
@@ -65,9 +57,58 @@ function M.config()
             vim.lsp.buf.format()
         end, { desc = 'Format current buffer with LSP' })
 
-        -- because I'm used to it from vscode
-        nmap('<F2>', vim.lsp.buf.rename, 'Rename with LSP')
+        -- Lspsaga keymaps
+        -- LSP finder - Find the symbol's definition
+        -- If there is no definition, it will instead be hidden
+        -- When you use an action in finder like "open vsplit",
+        -- you can use <C-t> to jump back
+        nmap("gf", "<cmd>Lspsaga lsp_finder<CR>", "[G]oto definition/reference [F]inder")
+        -- Code action
+        nmap('<leader>ca', "<cmd>Lspsaga code_action<CR>", '[C]ode [A]ction')
+        -- Rename all occurrences of the hovered word for the entire file
+        nmap('<leader>rn', "<cmd>Lspsaga rename<CR>", '[R]e[n]ame')
+        -- Peek definition
+        -- You can edit the file containing the definition in the floating window
+        -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
+        -- It also supports tagstack
+        -- Use <C-t> to jump back
+        nmap('gd', "<cmd>Lspsaga peek_definition<CR>", '[G]oto Peek [D]efinition')
+        -- Peek type definition
+        -- You can edit the file containing the type definition in the floating window
+        -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
+        -- It also supports tagstack
+        -- Use <C-t> to jump back
+        nmap('gt', "<cmd>Lspsaga peek_type_definition<CR>", '[G]oto Peek [T]ype Definition')
+        -- Show line diagnostics
+        -- You can pass argument ++unfocus to
+        -- unfocus the show_line_diagnostics floating window
+        nmap('<leader>D', "<cmd>Lspsaga show_line_diagnostics<CR>", 'Show Line [D]iagnostics')
+        -- Show cursor diagnostics
+        nmap('<leader>d', "<cmd>Lspsaga show_cursor_diagnostics<CR>", 'Show Cursor [D]iagnostics')
+        -- Diagnostic jump
+        -- You can use <C-o> to jump back to your previous location
+        nmap("[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Jump to previous [D]iagnostic message")
+        nmap("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", "Jump to next [D]iagnostic message")
+        -- Toggle outline
+        nmap('<leader>o', "<cmd>Lspsaga outline<CR>", 'Toggle [O]utline')
+        -- Hover Doc
+        -- See `:help K` for why this keymap
+        -- If there is no hover doc,
+        -- there will be a notification stating that
+        -- there is no information available.
+        -- To disable it just use ":Lspsaga hover_doc ++quiet"
+        -- Pressing the key twice will enter the hover window
+        nmap('K', "<cmd>Lspsaga hover_doc<CR>", 'Hover Documentation')
+
+        -- because I'm used to these from VSCode
+        nmap('<F2>', "<cmd>Lspsaga rename<CR>", 'Rename with LSP')
         nmap('<A-F>', vim.lsp.buf.format, 'Format buffer with LSP')
+        vim.keymap.set({ "n", "t" }, "<C-`>", "<cmd>Lspsaga term_toggle<CR>", {
+            desc = "Toggle Floating Terminal"
+        })
+        vim.keymap.set({ "n", "t" }, "<C-,>", "<cmd>Lspsaga term_toggle<CR>", {
+            desc = "Toggle Floating Terminal"
+        })
     end
 
     -- rust

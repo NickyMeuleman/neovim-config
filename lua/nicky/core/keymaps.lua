@@ -30,9 +30,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-j>", "<C-w>j", opts)
 keymap.set("n", "<C-k>", "<C-w>k", opts)
--- HELP: moving right doesn't work
--- screen flashes, how to turn off screen refresh
--- :map <c-l> outputs n <C-L>   * <C-W>l
+-- This does't work in Windows terminal (eventhough I remapped it there to do nothing)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- window resizing
@@ -62,6 +60,14 @@ keymap.set("v", "p", '"_dP', opts)
 keymap.set({"n", "v"}, "<leader>y", [["+y]], opts)
 keymap.set({"n", "v"}, "<leader>p", [["+p]], opts)
 keymap.set("n", "<leader>Y", [["+Y]], opts)
+
+-- Diagnostic keymaps
+-- some of these are overwritten by lsp-specific keybinds when an lsp loads
+keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+-- Add buffer diagnostics to the location list.
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Open file explorer on current file
 keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)

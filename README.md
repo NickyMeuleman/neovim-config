@@ -23,3 +23,6 @@ https://github.com/folke/trouble.nvim
 to replace my usage of the "problems" panel in vscode.
 
 Should I do an integrated terminal, use my termial app's splits and tabs, or go full on tmux?
+
+Breadcrumbs via lspsaga or barbecue?
+VSCodelike tab pages: barbar or bufferline?
