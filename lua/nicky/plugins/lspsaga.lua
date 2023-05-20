@@ -3,7 +3,6 @@ local M = {
     event = "LspAttach",
     dependencies = {
         { "nvim-tree/nvim-web-devicons" },
-        -- TODO: revisit treesitter integration
         --Please make sure you install markdown and markdown_inline parser
         { "nvim-treesitter/nvim-treesitter" }
     }

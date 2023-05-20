@@ -57,8 +57,8 @@ keymap.set("v", "p", '"_dP', opts)
 -- yank and paste to/from the system clipboard
 -- I'm keeping the system clipboard seperate from the vim clipboard on purpose
 -- you often see vim.opt.clipboard = "unnamedplus", but I don't want to do that
-keymap.set({"n", "v"}, "<leader>y", [["+y]], opts)
-keymap.set({"n", "v"}, "<leader>p", [["+p]], opts)
+keymap.set({ "n", "v" }, "<leader>y", [["+y]], opts)
+keymap.set({ "n", "v" }, "<leader>p", [["+p]], opts)
 keymap.set("n", "<leader>Y", [["+Y]], opts)
 
 -- Diagnostic keymaps
@@ -75,15 +75,15 @@ keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)
 -- Telescope --
 -- See `:help telescope.builtin`
 -- adapted from https://github.com/nvim-lua/kickstart.nvim/blob/0470d07c8c44f270bd64d0d11f5ebb8d994a1c00/init.lua#L268-L284
-keymap.set('n', '<leader>?',  "<cmd>Telescope oldfiles<cr>", { desc = '[?] Find recently opened files' })
+keymap.set('n', '<leader>?', "<cmd>Telescope oldfiles<cr>", { desc = '[?] Find recently opened files' })
 -- list open buffers in current neovim instance
 keymap.set('n', '<leader><space>', "<cmd>Telescope buffers<cr>", { desc = '[ ] Find existing buffers' })
 keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
+    -- You can pass additional configuration to telescope to change theme, layout, etc.
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
 end, { desc = '[/] Fuzzily search in current buffer' })
 keymap.set('n', '<leader>gf', "<cmd>Telescope git_files<cr>", { desc = 'Search [G]it [F]iles' })
 -- find files within current working directory, respects .gitignore
@@ -95,3 +95,10 @@ keymap.set('n', '<leader>sw', "<cmd>Telescope grep_string<cr>", { desc = '[S]ear
 -- find string in current working directory as you type
 keymap.set('n', '<leader>sg', "<cmd>Telescope live_grep<cr>", { desc = '[S]earch by [G]rep' })
 keymap.set('n', '<leader>sd', "<cmd>Telescope diagnostics<cr>", { desc = '[S]earch [D]iagnostics' })
+
+-- Lspsaga keybinds that don't need an lsp attached --
+-- Because I'm used to the integrated terminal in VSCode
+-- Terminals do not understand <C-`> so I'm using <C-t> for now. TODO: learn tmux or something
+vim.keymap.set({ "n", "t" }, "<C-t>", "<cmd>Lspsaga term_toggle<CR>", {
+    desc = "Toggle Floating Terminal"
+})

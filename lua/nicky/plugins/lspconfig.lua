@@ -103,12 +103,6 @@ function M.config()
         -- because I'm used to these from VSCode
         nmap('<F2>', "<cmd>Lspsaga rename<CR>", 'Rename with LSP')
         nmap('<A-F>', vim.lsp.buf.format, 'Format buffer with LSP')
-        vim.keymap.set({ "n", "t" }, "<C-`>", "<cmd>Lspsaga term_toggle<CR>", {
-            desc = "Toggle Floating Terminal"
-        })
-        vim.keymap.set({ "n", "t" }, "<C-,>", "<cmd>Lspsaga term_toggle<CR>", {
-            desc = "Toggle Floating Terminal"
-        })
     end
 
     -- rust
