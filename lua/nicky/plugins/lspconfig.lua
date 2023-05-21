@@ -83,6 +83,8 @@ function M.config()
         -- You can pass argument ++unfocus to
         -- unfocus the show_line_diagnostics floating window
         nmap('<leader>D', "<cmd>Lspsaga show_line_diagnostics<CR>", 'Show Line [D]iagnostics')
+        -- the regular way because the line diagnostic popup is weird sometimes
+        nmap('gl', vim.diagnostic.open_float, '[G]oto [L]ine Diagnostic')
         -- Show cursor diagnostics
         nmap('<leader>d', "<cmd>Lspsaga show_cursor_diagnostics<CR>", 'Show Cursor [D]iagnostics')
         -- Diagnostic jump
