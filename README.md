@@ -35,5 +35,5 @@ VSCodelike tab pages: barbar or bufferline?
 I want the autofix behaviour of ESLint from VSCode codeactions.fixall, or the --fix command line arg.
 Do I need to drop eslint_d from null-ls and use eslint through lspconfig like so: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint?
 
-TODO: extract formatting logic so the on_attach for an lspconfig lsp,
+[x] : extract formatting logic so the on_attach for an lspconfig lsp,
 a null-ls source, and the keymap for formatting use the same logic

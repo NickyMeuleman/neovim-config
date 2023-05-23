@@ -20,27 +20,9 @@ function M.config()
 
 	local utils = require("nicky.utils")
 
-	-- to setup format on save
-	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 	-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-
-	local format_on_save = function(current_client, bufnr)
-		if current_client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				-- avoid formatter conflicts between regular lsp servers and null-ls
-				-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
-				callback = function()
-					utils.format_buffer(bufnr)
-				end,
-			})
-		end
-	end
 
 	-- enable keybinds only for when lsp server available
 	-- This function gets run when an LSP connects to a particular buffer.
@@ -137,7 +119,7 @@ function M.config()
 		capabilities = capabilities,
 		on_attach = function(current_client, bufnr)
 			lsp_keymaps(current_client, bufnr)
-			format_on_save(current_client, bufnr)
+			utils.format_on_save(current_client, bufnr)
 		end,
 	})
 
