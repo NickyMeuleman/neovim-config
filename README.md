@@ -1,6 +1,7 @@
 # Neovim config
 
 Uses several different sources as inspiration:
+
 - https://www.youtube.com/watch?v=ctH-a-1eUME
 - https://github.com/LunarVim/nvim-basic-ide
 - https://www.youtube.com/watch?v=vdn_pKJUda8
@@ -11,11 +12,15 @@ Uses several different sources as inspiration:
 - https://github.com/ThePrimeagen/init.lua
 - https://www.youtube.com/watch?v=J9yqSdvAKXY
 - https://github.com/cpow/cpow-dotfiles
+- https://www.youtube.com/watch?v=Hg8dhwsddlM
+- https://github.com/dane-harnett/dotfiles
+
+And LOTS of help from the Vim channel in The ThePrimeagen's Discord.
 
 I'm swiching from VSCode to Neovim so expect several setting that are tailored to preserving my habits partially.
 
-
-alternative way to set up LSPs detailed here: https://github.com/williamboman/mason.nvim/discussions/57#discussioncomment-3129035
+alternative way to set up LSPs detailed here:
+https://github.com/williamboman/mason.nvim/discussions/57#discussioncomment-3129035
 
 ### Notes
 
@@ -26,3 +31,9 @@ Should I do an integrated terminal, use my termial app's splits and tabs, or go 
 
 Breadcrumbs via lspsaga or barbecue?
 VSCodelike tab pages: barbar or bufferline?
+
+I want the autofix behaviour of ESLint from VSCode codeactions.fixall, or the --fix command line arg.
+Do I need to drop eslint_d from null-ls and use eslint through lspconfig like so: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint?
+
+TODO: extract formatting logic so the on_attach for an lspconfig lsp,
+a null-ls source, and the keymap for formatting use the same logic
