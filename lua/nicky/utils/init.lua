@@ -1,17 +1,12 @@
 local M = {}
 
-local local_status, _ = pcall(require, "null-ls")
-if not local_status then
-	return
-end
-local sources = package.loaded["null-ls"] and require("null-ls.sources")
-
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 M.format_buffer = function(bufnr)
 	local ft = vim.bo[bufnr].filetype
-	local has_nullls_formatter = package.loaded["null-ls"] and (#sources.get_available(ft, "NULL_LS_FORMATTING") > 0)
+	local has_nullls_formatter = package.loaded["null-ls"]
+		and (#require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") > 0)
 
 	vim.lsp.buf.format({
 		filter = function(client)

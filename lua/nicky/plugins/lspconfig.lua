@@ -1,3 +1,5 @@
+local utils = require("nicky.utils")
+
 local M = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -17,8 +19,6 @@ function M.config()
 	if not cmp_nvim_lsp_status then
 		return
 	end
-
-	local utils = require("nicky.utils")
 
 	-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 	local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -37,3 +37,24 @@ Do I need to drop eslint_d from null-ls and use eslint through lspconfig like so
 
 [x] : extract formatting logic so the on_attach for an lspconfig lsp,
 a null-ls source, and the keymap for formatting use the same logic
+Based on: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/format.nvim-lua
+
+Well, that extraction caused a weird intermittant error.
+I think it's a race condition to do with null-ls not being loaded on vim startup.
+
+```
+Error detected while processing BufEnter Autocommands for "*":
+Failed to run `config` for null-ls.nvim
+/home/nicky/.config/nvim/lua/nicky/plugins/null-ls.lua:14: loop or previous erro
+r loading module 'nicky.utils'
+# stacktrace:
+  - ~/.config/nvim/lua/nicky/plugins/null-ls.lua:14 _in_ **config**
+  - ~/.config/nvim/lua/nicky/utils/init.lua:3
+  - ~/.config/nvim/lua/nicky/plugins/lspconfig.lua:21 _in_ **config**
+  - ~/.config/nvim/lua/nicky/lazy.lua:25
+  - ~/.config/nvim/init.lua:#
+```
+
+Reordered some code and it appears to be fixed now since I can no longer replicate it.
+
+Todo: make a toggle that turns autoformatting on or off

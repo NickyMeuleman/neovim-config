@@ -1,3 +1,5 @@
+local utils = require("nicky.utils")
+
 local M = {
 	"jose-elias-alvarez/null-ls.nvim",
 	dependencies = {
@@ -10,8 +12,6 @@ function M.config()
 	if not local_status then
 		return
 	end
-
-	local utils = require("nicky.utils")
 
 	local diagnostics = null_ls.builtins.diagnostics -- linters
 	local formatting = null_ls.builtins.formatting -- formatters
