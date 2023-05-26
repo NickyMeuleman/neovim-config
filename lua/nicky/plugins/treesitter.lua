@@ -42,6 +42,10 @@ function M.config()
 			-- enable ts autotag plugin
 			enable = true,
 		},
+		rainbow = {
+			-- enable ts rainbow plugin
+			enable = true,
+		},
 	})
 end
 
