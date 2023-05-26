@@ -38,6 +38,10 @@ function M.config()
 			-- Indentation based on treesitter for the = operator
 			enable = true,
 		},
+		autotag = {
+			-- enable ts autotag plugin
+			enable = true,
+		},
 	})
 end
 
