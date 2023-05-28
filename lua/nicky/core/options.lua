@@ -9,9 +9,9 @@ opt.relativenumber = true -- relative numbers
 opt.numberwidth = 4 -- minimal number of columns to use for the line number
 
 -- Tabs & Indentation
-opt.tabstop = 4 -- insert spaces for a tab
-opt.softtabstop = 4 -- tabs and spaces can be used together seamlessly
-opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+opt.tabstop = 2 -- insert spaces for a tab
+opt.softtabstop = 2 -- tabs and spaces can be used together seamlessly
+opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 opt.expandtab = true -- expand tabs to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true -- make indenting smarter
