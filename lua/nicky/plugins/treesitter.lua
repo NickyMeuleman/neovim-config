@@ -1,6 +1,11 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	dependencies = {
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		"windwp/nvim-ts-autotag",
+		"HiPhish/nvim-ts-rainbow2",
+	},
 }
 
 function M.config()
@@ -45,6 +50,11 @@ function M.config()
 		rainbow = {
 			-- enable ts rainbow plugin
 			enable = true,
+		},
+		context_commentstring = {
+			-- enable ts-context-commentstring plugin to get correct comments in JSX
+			enable = true,
+			enable_autocmd = false, -- autocmd recalculates commentstring on cursorhold
 		},
 	})
 end
