@@ -70,7 +70,7 @@ keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating 
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Open file explorer on current file
-keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)
+keymap.set("n", "<leader>e", ":Neotree filesystem toggle reveal right<CR>", opts)
 
 -- Telescope --
 -- See `:help telescope.builtin`
