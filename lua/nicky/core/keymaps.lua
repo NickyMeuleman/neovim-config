@@ -60,6 +60,9 @@ keymap.set("v", "p", '"_dP', opts)
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], opts)
 keymap.set({ "n", "v" }, "<leader>p", [["+p]], opts)
 keymap.set("n", "<leader>Y", [["+Y]], opts)
+keymap.set({ "i", "c" }, "<C-v>", "<C-r>+", opts)
+-- use <c-r> to insert original character without triggering things like auto-pairs
+keymap.set("i", "<C-r>", "<C-v>", opts)
 
 -- Diagnostic keymaps
 -- some of these are overwritten by lsp-specific keybinds when an lsp loads

@@ -30,7 +30,7 @@ opt.sidescrolloff = 8 -- minimal number of screen columns to keep to the left an
 -- Misc look and feel
 opt.termguicolors = true -- set term gui colors (most terminals support this)
 opt.signcolumn = "yes" -- always show the sign column (the gutter left of line numbers)
-opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+opt.guifont = { "FiraCode Nerd Font", ":h17" } -- the font used in graphical neovim applications
 opt.cursorline = true -- highlight the current line
 opt.list = true -- show nomally invisible characters
 opt.listchars:append({ -- override default characters
