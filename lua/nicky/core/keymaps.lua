@@ -39,10 +39,6 @@ keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- buffer navigation
-keymap.set("n", "<S-l>", ":bnext<CR>", opts)
-keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- take highlighted code for a ride
 keymap.set("v", "J", ":m '>+1<cr>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -105,3 +101,23 @@ keymap.set("n", "<leader>sd", "<cmd>Telescope diagnostics<cr>", { desc = "[S]ear
 vim.keymap.set({ "n", "t" }, "<C-t>", "<cmd>Lspsaga term_toggle<CR>", {
 	desc = "Toggle Floating Terminal",
 })
+
+-- barbar.nvim buffer navigation
+keymap.set("n", "<S-l>", "<cmd>BufferNext<CR>", opts)
+keymap.set("n", "<S-h>", "<cmd>BufferPrevious<CR>", opts)
+keymap.set("n", "<A-c>", "<cmd>BufferClose<CR>", opts)
+keymap.set("n", "<A-S-c>", "<cmd>BufferRestore<CR>", opts)
+keymap.set("n", "<C-p>", "<cmd>BufferPick<CR>", opts)
+-- Goto buffer in position...
+keymap.set("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
+keymap.set("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
+keymap.set("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
+keymap.set("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
+keymap.set("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
+keymap.set("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
+keymap.set("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
+keymap.set("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
+keymap.set("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
+keymap.set("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
+-- because I'm used to it
+keymap.set("n", "<leader>kw", "<cmd>BufferCloseAllButPinned<CR>", opts)
