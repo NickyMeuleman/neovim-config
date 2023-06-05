@@ -14,7 +14,9 @@ function M.config()
 		return
 	end
 
-	barbecue.setup()
+	barbecue.setup({
+		theme = "catppuccin",
+	})
 end
 
 return M

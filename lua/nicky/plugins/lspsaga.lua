@@ -32,6 +32,9 @@ function M.config()
 				expand_or_jump = "<CR>",
 			},
 		},
+		ui = {
+			kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+		},
 	})
 end
 

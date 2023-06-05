@@ -86,15 +86,6 @@ function M.config()
 			},
 		},
 	})
-
-	-- Tweak highlight groups
-	-- To see all highlight groups :Telescope highlights
-	-- because untracked files are usually new files
-	vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "NeoTreeGitAdded" })
-	-- dotfiles and ignored files are a bit hard to read out of the box
-	vim.api.nvim_set_hl(0, "NeoTreeDotfile", { link = "NeoTreeDimText" })
-	-- the confirmation prompts are unreadably in nightfly
-	vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { link = "NeoTreePreview" })
 end
 
 return M

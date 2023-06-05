@@ -12,25 +12,25 @@ function M.config()
 	end
 
 	-- Customize nightfly colors
-	local lualine_nightfly = require("lualine.themes.nightfly")
-
-	local new_colors = {
-		black = "#000000",
-		yellow = "#FFDA7B",
-	}
-
-	lualine_nightfly.command = {
-		a = {
-			gui = "bold",
-			bg = new_colors.yellow,
-			fg = new_colors.black,
-		},
-	}
+	-- local lualine_nightfly = require("lualine.themes.nightfly")
+	--
+	-- local new_colors = {
+	-- 	black = "#000000",
+	-- 	yellow = "#FFDA7B",
+	-- }
+	--
+	-- lualine_nightfly.command = {
+	-- 	a = {
+	-- 		gui = "bold",
+	-- 		bg = new_colors.yellow,
+	-- 		fg = new_colors.black,
+	-- 	},
+	-- }
 
 	lualine.setup({
 		options = {
 			icons_enabled = true,
-			theme = lualine_nightfly,
+			theme = "catppuccin",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
