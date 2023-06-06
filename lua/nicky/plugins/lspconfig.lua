@@ -6,6 +6,9 @@ local M = {
 		{
 			"hrsh7th/cmp-nvim-lsp",
 		},
+		{
+			"folke/neodev.nvim",
+		},
 	},
 }
 
@@ -17,6 +20,11 @@ function M.config()
 
 	local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 	if not cmp_nvim_lsp_status then
+		return
+	end
+
+	local neodev_ok, neodev = pcall(require, "neodev")
+	if not neodev_ok then
 		return
 	end
 
@@ -124,21 +132,18 @@ function M.config()
 	})
 
 	-- lua
+	-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+	neodev.setup()
 	lspconfig["lua_ls"].setup({
 		capabilities = capabilities,
 		on_attach = lsp_keymaps,
 		settings = {
 			Lua = {
-				-- make the language server recognize "vim" global
-				diagnostics = {
-					globals = { "vim" },
-				},
 				workspace = {
-					-- make language server aware of runtime files
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.stdpath("config") .. "/lua"] = true,
-					},
+					checkThirdParty = false,
+				},
+				telemetry = {
+					enable = false,
 				},
 			},
 		},
