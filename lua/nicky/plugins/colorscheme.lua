@@ -24,6 +24,7 @@ function M.config()
 			barbecue = {
 				dim_dirname = true,
 			},
+			fidget = true,
 			gitsigns = true,
 			indent_blankline = {
 				enabled = true,
