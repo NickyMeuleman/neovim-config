@@ -52,6 +52,7 @@ function M.config()
 			treesitter = true,
 			ts_rainbow2 = true,
 			telescope = true,
+			which_key = true,
 		},
 	})
 
