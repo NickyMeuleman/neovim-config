@@ -131,14 +131,14 @@ map("n", "<A-0>", "<Cmd>BufferLast<CR>")
 
 -- git related
 map("n", "<leader>gf", "<cmd>Telescope git_files<CR>", { desc = "Search [g]it [f]iles" })
-map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "List all [g]it [c]ommits (<CR> to checkout)" })
+map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "List all [g]it [c]ommits (CR to checkout)" })
 map(
 	"n",
 	"<leader>gn",
 	"<cmd>Telescope git_bcommits<CR>",
-	{ desc = "List [g]it commits for file/buffer that is active [n]ow (<CR> to checkout)" }
+	{ desc = "List [g]it commits for file/buffer  active [n]ow (CR to checkout)" }
 )
-map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "List [g]it [b]ranches (<CR> to checkout)" })
+map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "List [g]it [b]ranches (CR to checkout)" })
 map(
 	"n",
 	"<leader>gs",

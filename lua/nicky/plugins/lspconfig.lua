@@ -54,7 +54,7 @@ function M.config()
 		nmap("<leader>f", function()
 			local buf = vim.api.nvim_get_current_buf()
 			utils.format_buffer(buf)
-		end, "[F]ormat buffer with LSP")
+		end, "[f]ormat buffer with LSP")
 		nmap("<leader>ld", function()
 			telescope_builtin.diagnostics({ bufnr = 0 })
 		end, "Buffer [d]iagnosics")
@@ -102,7 +102,7 @@ function M.config()
 		-- there is no information available.
 		-- Pressing the key twice will enter the hover window
 		nmap("K", "<cmd>Lspsaga hover_doc<CR>", "Hover documentation")
-		nmap("<leader>k", vim.lsp.buf.signature_help, "Signature documentation")
+		nmap("<leader>k", vim.lsp.buf.signature_help, "[k] Signature documentation")
 
 		-- because I'm used to these from VSCode
 		nmap("<F2>", "<cmd>Lspsaga rename<CR>", "Rename with LSP")
