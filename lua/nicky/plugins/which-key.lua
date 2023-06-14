@@ -18,11 +18,23 @@ function M.config()
 			g = {
 				name = "git",
 			},
+			l = {
+				name = "LSP",
+			},
 			s = {
 				name = "search",
 			},
-			l = {
-				name = "LSP",
+			t = {
+				name = "treesitter",
+				["s"] = {
+					name = "swap",
+					["i"] = {
+						name = "inner",
+					},
+					["a"] = {
+						name = "around",
+					},
+				},
 			},
 			w = {
 				name = "window",
