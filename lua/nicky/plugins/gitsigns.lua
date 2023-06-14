@@ -11,6 +11,11 @@ function M.config()
 
 	gitsigns.setup({
 		current_line_blame = true,
+		on_attach = function(bufnr)
+			vim.keymap.set("n", "<leader>gp", gitsigns.prev_hunk, { buffer = bufnr, desc = "[g]it [p]revious hunk" })
+			vim.keymap.set("n", "<leader>gn", gitsigns.next_hunk, { buffer = bufnr, desc = "[g]it [n]ext hunk" })
+			vim.keymap.set("n", "<leader>gh", gitsigns.preview_hunk, { buffer = bufnr, desc = "[g]it preview [h]unk" })
+		end,
 	})
 end
 

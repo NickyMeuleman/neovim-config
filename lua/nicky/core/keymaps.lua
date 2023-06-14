@@ -134,9 +134,9 @@ map("n", "<leader>gf", "<cmd>Telescope git_files<CR>", { desc = "Search [g]it [f
 map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "List all [g]it [c]ommits (CR to checkout)" })
 map(
 	"n",
-	"<leader>gn",
+	"<leader>ga",
 	"<cmd>Telescope git_bcommits<CR>",
-	{ desc = "List [g]it commits for file/buffer  active [n]ow (CR to checkout)" }
+	{ desc = "List [g]it commits for [a]ctive file/bufferct (CR to checkout)" }
 )
 map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "List [g]it [b]ranches (CR to checkout)" })
 map(
