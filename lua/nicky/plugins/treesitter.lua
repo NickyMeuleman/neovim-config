@@ -70,53 +70,52 @@ function M.config()
 				enable = true,
 				lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
 				keymaps = {
-					-- You can use the capture groups defined in textobjects.scm in the textobjects plugin
+					-- You can use the capture groups defined in textobjects.scm from the textobjects plugin repo
+					-- using "a" for parameter to keep "p" for paragraph
 					["aa"] = { query = "@parameter.outer", desc = "around parameter" },
 					["ia"] = { query = "@parameter.inner", desc = "inner parameter" },
-					["af"] = { query = "@function.outer", desc = "around function" },
-					["if"] = { query = "@function.inner", desc = "inner function" },
 					["ac"] = { query = "@class.outer", desc = "around class" },
 					["ic"] = { query = "@class.inner", desc = "inner class" },
+					["af"] = { query = "@function.outer", desc = "around function" },
+					["if"] = { query = "@function.inner", desc = "inner function" },
 				},
 			},
 			swap = {
 				enable = true,
+				-- using "a" for parameter again to keep consistency with other textobject keymaps
+				-- @attribute.outer swaps HTML attributes, but "a" is already used by parameter, sad noises
 				swap_previous = {
-					-- mnemonics: capitals for previous, lowercase for next. (like n and N for highlights)
-					--  [t]reesitter [s]wap [i]nner [A]ttribute
-					--  [t]reesitter [s]wap [a]round [a]ttribute
-					["<leader>tsiA"] = "@attribute.inner",
-					["<leader>tsiP"] = "@parameter.inner",
-					["<leader>tsaA"] = "@attribute.outer",
-					["<leader>tsaP"] = "@parameter.outer",
-					["<leader>tsiF"] = "@function.inner",
-					["<leader>tsaF"] = "@function.outer",
+					["<leader>tA"] = { query = "@parameter.inner", desc = "[t]reesitter swap previous p[A]rameter" },
+					["<leader>tF"] = { query = "@function.outer", desc = "[t]reesitter swap previous [F]unction" },
+					["<leader>tT"] = { query = "@attribute.outer", desc = "[t]reesitter swap previous a[T]tribute" },
 				},
 				swap_next = {
-					["<leader>tsia"] = "@attribute.inner",
-					["<leader>tsaa"] = "@attribute.outer",
-					["<leader>tsip"] = "@parameter.inner",
-					["<leader>tsif"] = "@function.inner",
-					["<leader>tsap"] = "@parameter.outer",
-					["<leader>tsaf"] = "@function.outer",
+					["<leader>ta"] = { query = "@parameter.inner", desc = "[t]reesitter swap next p[a]rameter" },
+					["<leader>tf"] = { query = "@function.outer", desc = "[t]reesitter swap next [f]unction" },
+					["<leader>tt"] = { query = "@attribute.outer", desc = "[t]reesitter swap next a[t]tribute" },
 				},
 			},
 			move = {
 				enable = true,
 				set_jumps = true, -- whether to set jumps in the jumplist
+				-- using "a" for parameter again to keep consistency with other textobject keymaps
 				goto_next_start = {
+					["]a"] = { query = "@parameter.inner", desc = "next parameter start" },
 					["]m"] = { query = "@function.outer", desc = "next function/method start" },
 					["]]"] = { query = "@block.outer", desc = "next block start" },
 				},
 				goto_next_end = {
+					["]A"] = { query = "@parameter.inner", desc = "next parameter end" },
 					["]M"] = { query = "@function.outer", desc = "next function/method end" },
 					["]["] = { query = "@block.outer", desc = "next block end" },
 				},
 				goto_previous_start = {
+					["[a"] = { query = "@parameter.inner", desc = "previous parameter start" },
 					["[m"] = { query = "@function.outer", desc = "previous function/method start" },
 					["[["] = { query = "@block.outer", desc = "previous block start" },
 				},
 				goto_previous_end = {
+					["[A"] = { query = "@parameter.inner", desc = "previous parameter end" },
 					["[M"] = { query = "@function.outer", desc = "previous function/method end" },
 					["[]"] = { query = "@block.outer", desc = "previous block end" },
 				},

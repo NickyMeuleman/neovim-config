@@ -26,15 +26,6 @@ function M.config()
 			},
 			t = {
 				name = "treesitter",
-				["s"] = {
-					name = "swap",
-					["i"] = {
-						name = "inner",
-					},
-					["a"] = {
-						name = "around",
-					},
-				},
 			},
 			w = {
 				name = "window",
