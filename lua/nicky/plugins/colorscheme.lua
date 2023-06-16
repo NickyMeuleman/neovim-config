@@ -20,6 +20,7 @@ function M.config()
 			enabled = true,
 		},
 		integrations = {
+			alpha = true,
 			barbar = true,
 			barbecue = {
 				dim_dirname = true,
@@ -73,5 +74,4 @@ function M.config()
 	-- vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { link = "NeoTreePreview" })
 end
 
--- return the plugin spec lua table lazy.nvim uses
 return M
