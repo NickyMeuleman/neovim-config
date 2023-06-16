@@ -27,7 +27,7 @@ map("i", "ht", "<ESC>")
 map("i", "<C-c>", "<ESC>")
 
 -- clear search highlights
-map("n", "<leader>h", "<cmd>nohlseach<CR>", { desc = "No [h]ighlights" })
+map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "No [h]ighlights" })
 
 -- Easier reach to beginning and end of lines
 map("n", "H", "^", { desc = "Move to beginning of text on current line" })
@@ -75,7 +75,13 @@ map("v", "p", "P")
 -- you often see vim.opt.clipboard = "unnamedplus", but I don't want to do that
 map({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank into OS clipboard" })
 map({ "n", "v" }, "<leader>p", [["+p]], { desc = "[p]aste from OS clipboard" })
-map("n", "<leader>Y", [["+Y]], { desc = "[Y]ank line into OS clipboard" })
+-- allow the default remap neovim applies to "Y", see the default_remaps section under ":help vim_diff"
+map(
+	"n",
+	"<leader>Y",
+	[["+Y]],
+	{ desc = "[Y]ank into OS clipboard until the end of the line", noremap = false, remap = true }
+)
 map({ "i", "c" }, "<C-v>", "<C-r>+", { desc = "Paste from OS clipboard" })
 -- i_<C-v> was remapped, use i_<C-q>, it's identical
 
